@@ -1,0 +1,21 @@
+body {
+   background-color: rgb(48, 42, 42);
+   color: aliceblue;
+}
+
+#game-board {
+   list-style: none;
+   width: 20rem;
+   height: 20rem;
+   display: grid;
+   grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
+}
+#game-board li {
+   border: 1px solid white;
+   width: 5rem;
+   height: 5rem;
+}
+
+.snake {
+   background-color: green;
+}
