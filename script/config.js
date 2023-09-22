@@ -20,7 +20,10 @@ function upMovement(event) {
    for (let i = yAxis; i >= 0; i--) {
       setTimeout(() => {
          blockArray[computingMatrix[i][xAxis]].classList.add("snake");
-      }, 100 * computingMatrix[i][xAxis]);
+         if (i < 7) {
+            blockArray[computingMatrix[i + 1][xAxis]].classList.remove("snake");
+         }
+      }, 200 * i);
       yAxis = i;
    }
 }
@@ -28,7 +31,10 @@ function downMovement(event) {
    for (let i = yAxis; i < 8; i++) {
       setTimeout(() => {
          blockArray[computingMatrix[i][xAxis]].classList.add("snake");
-      }, 100 * computingMatrix[i][xAxis]);
+         if (i > 0) {
+            blockArray[computingMatrix[i - 1][xAxis]].classList.remove("snake");
+         }
+      }, 400 * i);
       yAxis = i;
    }
 }
@@ -37,7 +43,10 @@ function leftMovement() {
    for (let i = xAxis; i >= 0; i--) {
       setTimeout(() => {
          blockArray[computingMatrix[yAxis][i]].classList.add("snake");
-      }, 100 * computingMatrix[yAxis][i]);
+         if (i <= 7) {
+            blockArray[computingMatrix[yAxis][i + 1]].classList.remove("snake");
+         }
+      }, 400 * i);
       xAxis = i;
    }
 }
@@ -48,7 +57,7 @@ function rightMovement() {
          if (i > 0) {
             blockArray[computingMatrix[yAxis][i - 1]].classList.remove("snake");
          }
-      }, 200 * i);
+      }, 400 * i);
       xAxis = i;
    }
 }

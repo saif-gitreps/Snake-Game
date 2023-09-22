@@ -24,7 +24,15 @@ up.addEventListener("click", upMovement);
 down.addEventListener("click", downMovement);
 left.addEventListener("click", leftMovement);
 right.addEventListener("click", rightMovement);
+
 reset.addEventListener("click", (event) => {
    xAxis = 0;
    yAxis = 0;
+   for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
+         if (blockArray[computingMatrix[i][j]].classList.contains("snake")) {
+            blockArray[computingMatrix[i][j]].classList.remove("snake");
+         }
+      }
+   }
 });
