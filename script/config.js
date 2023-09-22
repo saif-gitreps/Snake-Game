@@ -42,10 +42,13 @@ function leftMovement() {
    }
 }
 function rightMovement() {
-   //    for (let i = 0; i < 8; i++) {
-   //       setTimeout(() => {
-   //          blockArray[computingMatrix[yAxis][i]].classList.add("snake");
-   //       }, 100 * computingMatrix[yAxis][i]);
-   //       xAxis = i;
-   //    }
+   for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+         blockArray[computingMatrix[yAxis][i]].classList.add("snake");
+         if (i > 0) {
+            blockArray[computingMatrix[yAxis][i - 1]].classList.remove("snake");
+         }
+      }, 200 * i);
+      xAxis = i;
+   }
 }
