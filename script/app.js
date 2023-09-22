@@ -9,9 +9,14 @@ let computingMatrix = [
    [56, 57, 58, 59, 60, 61, 62, 63],
 ];
 
+let xAxis = 0;
+let yAxis = 0;
+
 const blockArray = document.querySelectorAll("#game-board li");
 const output = document.getElementById("output");
 const up = document.getElementById("up-button");
 const left = document.getElementById("left-button");
 const right = document.getElementById("right-button");
 const down = document.getElementById("down-button");
+
+up.addEventListener("click", upMovement);
