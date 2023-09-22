@@ -16,4 +16,36 @@
 //    }, 700 * computingMatrix[0][0]);
 // }
 
-function upMovement() {}
+function upMovement(event) {
+   for (let i = yAxis; i >= 0; i--) {
+      setTimeout(() => {
+         blockArray[computingMatrix[i][xAxis]].classList.add("snake");
+      }, 100 * computingMatrix[i][xAxis]);
+      yAxis = i;
+   }
+}
+function downMovement(event) {
+   for (let i = yAxis; i < 8; i++) {
+      setTimeout(() => {
+         blockArray[computingMatrix[i][xAxis]].classList.add("snake");
+      }, 100 * computingMatrix[i][xAxis]);
+      yAxis = i;
+   }
+}
+
+function leftMovement() {
+   for (let i = xAxis; i >= 0; i--) {
+      setTimeout(() => {
+         blockArray[computingMatrix[yAxis][i]].classList.add("snake");
+      }, 100 * computingMatrix[yAxis][i]);
+      xAxis = i;
+   }
+}
+function rightMovement() {
+   //    for (let i = 0; i < 8; i++) {
+   //       setTimeout(() => {
+   //          blockArray[computingMatrix[yAxis][i]].classList.add("snake");
+   //       }, 100 * computingMatrix[yAxis][i]);
+   //       xAxis = i;
+   //    }
+}

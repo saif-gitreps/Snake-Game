@@ -16,6 +16,11 @@ body {
    height: 5rem;
 }
 
+#buttons h2:hover {
+   background-color: rgb(246, 246, 46);
+   cursor: pointer;
+}
+
 .snake {
    background-color: green;
 }
