@@ -1,5 +1,13 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from "./snake.js";
+import {
+   update as updateSnake,
+   draw as drawSnake,
+   getSnakeHead,
+   snakeIntersection,
+   SNAKE_SPEED,
+} from "./snake.js";
 import { update as updateFood, draw as drawFood } from "./food.js";
+
+import { outSideGrid } from "./grid.js";
 
 const gameBoard = document.getElementById("game-board");
 
