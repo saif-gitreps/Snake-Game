@@ -6,9 +6,6 @@ function addMovementListeners() {
 }
 
 function upMovement(event) {
-   down.removeEventListener("click", downMovement);
-   left.removeEventListener("click", leftMovement);
-   right.removeEventListener("click", rightMovement);
    let pointer = yAxis;
    for (let i = yAxis; i >= 0; i--) {
       setTimeout(() => {
@@ -19,12 +16,8 @@ function upMovement(event) {
       }, 400 * (pointer - i));
       yAxis = i;
    }
-   addMovementListeners();
 }
 function downMovement(event) {
-   up.removeEventListener("click", upMovement);
-   left.removeEventListener("click", leftMovement);
-   right.removeEventListener("click", rightMovement);
    for (let i = yAxis; i < 8; i++) {
       setTimeout(() => {
          blockArray[computingMatrix[i][xAxis]].classList.add("snake");
@@ -33,14 +26,13 @@ function downMovement(event) {
          }
       }, 400 * i);
       yAxis = i;
+      if (i == 4) {
+         break;
+      }
    }
-   addMovementListeners();
 }
 
 function leftMovement() {
-   down.removeEventListener("click", downMovement);
-   up.removeEventListener("click", upMovement);
-   right.removeEventListener("click", rightMovement);
    let pointer = xAxis;
    for (let i = xAxis; i >= 0; i--) {
       setTimeout(() => {
@@ -52,12 +44,8 @@ function leftMovement() {
       xAxis = i;
       console.log(xAxis);
    }
-   addMovementListeners();
 }
 function rightMovement() {
-   down.removeEventListener("click", downMovement);
-   left.removeEventListener("click", leftMovement);
-   up.removeEventListener("click", upMovement);
    for (let i = xAxis; i < 8; i++) {
       setTimeout(() => {
          blockArray[computingMatrix[yAxis][i]].classList.add("snake");
@@ -67,5 +55,4 @@ function rightMovement() {
       }, 400 * i);
       xAxis = i;
    }
-   addMovementListeners();
 }
