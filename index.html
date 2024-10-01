@@ -8,6 +8,37 @@
       <script src="game.js" defer type="module"></script>
    </head>
    <body>
-      <div id="game-board"></div>
+      <h1 style="text-align: center; color: black">Snake Game</h1>
+      <h2 style="text-align: center; color: black">
+         Use Arrow Keys or WASD on your keyboard to Play
+      </h2>
+      <h2 id="game-over-text" style="text-align: center; color: red"></h3>
+      <div
+         style="
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+         "
+      >
+         <div id="game-board"></div>
+         <div>
+            <h2 style="color: black; text-align: center">
+               Score: <span id="score" style="color: darkred"></span>
+            </h2>
+            <button
+               id="reset-button"
+               style="
+                  padding: 0.8rem;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: large;
+               "
+               onclick="window.location.reload();"
+            >
+               Reset Game
+            </button>
+         </div>
+      </div>
    </body>
 </html>

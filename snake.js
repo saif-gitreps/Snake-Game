@@ -1,11 +1,14 @@
 import { getInputDirection, inputDirection } from "./input..js";
+const score = document.getElementById("score");
+let currentScore = 0;
 
-export const SNAKE_SPEED = 6;
+export const SNAKE_SPEED = 8;
 const snakeBody = [{ x: 10, y: 11 }];
 let newSegments = 0;
 
 export function update() {
    addSegments();
+   score.innerText = currentScore;
    const inputDirection = getInputDirection();
    for (let i = snakeBody.length - 2; i >= 0; i--) {
       // this says to take the bottom of block to go one block above.
@@ -56,6 +59,7 @@ function addSegments() {
    for (let i = 0; i < newSegments; i++) {
       // duplicating at the end of our snake.
       snakeBody.push({ ...snakeBody[snakeBody.length - 1] });
+      currentScore += 1;
    }
    // PREVENT DUPLICATION OF SNAKE
    newSegments = 0;
